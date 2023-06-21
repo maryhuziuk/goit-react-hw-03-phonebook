@@ -28,7 +28,7 @@ export class App extends Component {
     const savedContacts = loadLocalStorage('contacts');
 
     if (savedContacts) {
-      this.setState({ contacts: JSON.parse(savedContacts) });
+      this.setState({ contacts: savedContacts });
     }
   }
 
@@ -36,10 +36,10 @@ export class App extends Component {
     const { contacts } = this.state;
 
     if (prevState.contacts !== contacts) {
-      saveLocalStorage('contacts', JSON.stringify(contacts));
+      saveLocalStorage('contacts', contacts);
     }
   }
- 
+
 
   addContact = ({ name, number }) => {
     const contact = { id: nanoid(), name, number };
