@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid'
+
 
 import {
     LabelStyle,
@@ -14,8 +14,7 @@ export class ContactsForm extends React.Component {
         name: '',
         number: '',
     };
-    nameInputId = nanoid();
-    numberInputId = nanoid();
+
 
     handleSubmit = event => {
         event.preventDefault();
@@ -34,7 +33,7 @@ export class ContactsForm extends React.Component {
     render() {
         return (
           <FormStyle onSubmit={this.handleSubmit}>
-            <LabelStyle htmlFor={this.nameInputId}>
+            <LabelStyle >
               Name
               <InputStyle
                 type="text"
@@ -47,7 +46,7 @@ export class ContactsForm extends React.Component {
               />
             </LabelStyle>
     
-            <LabelStyle htmlFor={this.numberInputId}>
+            <LabelStyle >
               Number
               <InputStyle
                 type="tel"
